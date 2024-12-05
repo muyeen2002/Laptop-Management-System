@@ -39,8 +39,8 @@ npm install
 Start the React development server:
 bash
 npm start
-![Screenshot (209)](https://github.com/user-attachments/assets/9b2729c0-e898-4a67-b049-78df8c6b6f7b)
-
+![pl1](https://github.com/user-attachments/assets/c930bc66-d872-42f7-b0e4-cab68f40b3c6)
+![pl2](https://github.com/user-attachments/assets/ef78091d-262a-40bd-a909-afb365f592e7)
 ## 4. Database Setup
 Import the provided SQL schema into your MySQL database.
 Components Overview
