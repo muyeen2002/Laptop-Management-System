@@ -1,74 +1,134 @@
-# Laptop-Management-System
-This project provides an inventory management system for laptops, allowing organizations to track laptop assignments, maintenance schedules, and issue reports effectively.
+# Laptop Management System
+The Laptop Management System is a web application designed to help organizations manage their inventory of laptops efficiently. It supports tracking assignments to employees, scheduling maintenance, and reporting issues. This system improves transparency and efficiency in laptop management.
 
 # Features
-## Admin Dashboard:
-View total laptops, assigned laptops, laptops under maintenance, and reported issues.
-Manage laptop inventory (add, update, delete laptops).
-Assign/unassign laptops to employees.
-Monitor recent activity logs.
-## Employee Dashboard:
-View assigned laptops and their details.
-Request a new laptop.
-Report issues with priority levels.
+## Admin Functionalities
+## Dashboard Overview:
+View key statistics, including:
+Total laptops.
+Assigned laptops.
+Laptops under maintenance.
+Reported issues.
+## Laptop Management:
+Add, update, or delete laptop records.
+Store details like brand, model, serial number, status, and purchase date.
+## Employee Management:
+Assign laptops to employees.
+Reassign or unassign laptops.
+Search employees by name or email.
+## Maintenance Tracking:
+Log maintenance history for laptops.
+Track maintenance status and associated costs.
+## Issue Management:
+View and resolve reported issues.
+Update issue status and priority.
+Employee Functionalities
+## Assigned Laptop View:
+View details of assigned laptops, including brand, model, serial number, and condition.
+## Request New Laptop:
+Submit requests for new laptops via a form.
+## Report Issues:
+Report problems with laptops, specifying description and priority level.
+Track the status of reported issues.
+# Additional Features
+## Authentication:
+Secure login with role-based access (Admin or Employee).
+Token-based authentication using JSON Web Tokens (JWT).
+## Responsive Design:
+Built with Tailwind CSS for a responsive and visually appealing interface.
+Search and Filter:
+Search and filter by employee name, laptop status, or maintenance status.
 ## Technologies Used
-Frontend: React.js, Tailwind CSS, Axios.
-Backend: Node.js, Express.js.
-Database: MySQL.
-Icons: Lucide Icons.
-Authentication: JSON Web Tokens (JWT).
-## Getting Started
-## 1. Clone the Repository
+Frontend
+React.js: Framework for building dynamic user interfaces.
+Tailwind CSS: Utility-first CSS framework for responsive design.
+Lucide Icons: Consistent and lightweight icons for visual enhancements.
+Backend
+Node.js & Express.js: Server-side framework for handling APIs and business logic.
+MySQL: Relational database for managing laptop, employee, and issue records.
+Authentication
+JWT: Role-based access control to protect resources.
+# Project Structure
+The project is divided into the following directories for maintainability:
 bash
-git clone <repository-url>
-cd laptop-management-system
-## 2. Backend Setup
-Navigate to the backend folder:
-bash
-cd backend
-npm install
-Configure the database connection in config.js.
-Start the server:
-bash
-npm start
-## 3. Frontend Setup
-Navigate to the frontend folder:
-bash
-cd frontend
-npm install
-Start the React development server:
-bash
-npm start
-![pl1](https://github.com/user-attachments/assets/c930bc66-d872-42f7-b0e4-cab68f40b3c6)
-![pl2](https://github.com/user-attachments/assets/ef78091d-262a-40bd-a909-afb365f592e7)
-## 4. Database Setup
-Import the provided SQL schema into your MySQL database.
-Components Overview
-Admin Dashboard
-StatsCard: Displays statistics with icons for quick insights.
-RecentActivity: Shows the latest activities, such as laptop assignments or issue reports.
-Employee Dashboard
-Assigned Laptops: Displays laptops assigned to the employee.
-Issue Reporting: Allows employees to report issues via a form.
-Testing the Application
-Default role: Admin
-Modify the role in Login.tsx to "employee" for employee-specific views.
-## Folder Structure
-css
-Copy code
 src/
-├── components/
-│   └── dashboard/
+├── components/           # Reusable UI components
+│   └── dashboard/        # Dashboard-specific components
 │       ├── StatsCard.tsx
 │       └── RecentActivity.tsx
-├── pages/
+├── pages/                # Role-based pages
 │   ├── admin/
 │   │   └── Dashboard.tsx
 │   └── employee/
 │       └── Dashboard.tsx
-Live Demo
-Run the development server with:
-bash
+├── services/             # API integration services
+└── utils/                # Helper functions and constants
+Setup and Installation
+Prerequisites
+Ensure you have the following installed:
 
-npm run dev
-Access the application at http://localhost:3000.
+Node.js
+MySQL
+npm or yarn
+Steps to Run Locally
+# Clone the Repository:
+bash
+git clone <repository-url>
+cd laptop-management-system
+# Setup Backend:
+Navigate to the backend directory:
+bash
+cd backend
+npm install
+# Configure your database connection in the config.js file.
+Start the server:
+bash
+Copy code
+npm start
+# Setup Frontend:
+Navigate to the frontend directory:
+bash
+Copy code
+cd frontend
+npm install
+![pl1](https://github.com/user-attachments/assets/bda16aed-1065-4597-8dc3-db3cba3c6020)
+
+# Start the React development server:
+bash
+Copy code
+npm start
+![pl2](https://github.com/user-attachments/assets/b0ab1cda-7db8-4fae-943c-4a909685f6f6)
+
+# Database Initialization:
+
+Import the SQL schema provided in the /database folder into your MySQL database.
+Access the Application:
+
+Open your browser and go to http://localhost:3000.
+APIs Overview
+Laptop APIs
+Add a laptop: POST /api/laptops
+Get all laptops: GET /api/laptops
+Update laptop details: PUT /api/laptops/:id
+Delete a laptop: DELETE /api/laptops/:id
+Employee APIs
+Get all employees: GET /api/employees
+Assign a laptop: POST /api/employees/assign
+Fetch assigned laptops: GET /api/employees/:id/laptops
+Maintenance and Issues APIs
+Log maintenance: POST /api/maintenance
+View maintenance history: GET /api/maintenance
+Report an issue: POST /api/issues
+# Key Components
+Admin Dashboard
+Displays an overview of statistics, recent activities, and laptop/employee management options.
+Employee Dashboard
+Focused on showing laptop details and enabling issue reporting or laptop requests.
+# Reusable Components
+StatsCard: Displays individual statistics like total laptops, assigned laptops, etc.
+RecentActivity: Displays recent system activities for transparency.
+# Future Enhancements
+Integration with third-party APIs for automated maintenance reminders.
+Notification system for employees and admins.
+Analytics dashboard for advanced reporting.
+Multi-language support for global usage.
